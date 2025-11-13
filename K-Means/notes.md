@@ -14,26 +14,6 @@ Make clusters of similar points by iteratively assigning points to the nearest c
 
 ---
 
-## 🎬 Watch: K-Means Explained
-
-<div align="center">
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;width:100%;max-width:800px;">
-        <iframe
-            src="https://www.youtube.com/embed/4b5d3muPQmA"
-            title="K-Means Clustering"
-            frameborder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-        ></iframe>
-    </div>
-    <p>
-        If the embed doesn’t load, <a href="https://www.youtube.com/watch?v=4b5d3muPQmA" target="_blank">open the video on YouTube</a>.
-    </p>
-</div>
-
----
-
 ## 🧠 Intuition First
 
 1) Pick K starting centroids (preferably smartly).
@@ -43,13 +23,14 @@ Make clusters of similar points by iteratively assigning points to the nearest c
 
 ```mermaid
 flowchart TB
-    A[Choose K] --> B[Init centroids (k-means++)]
+    A[Choose K] --> B["Init centroids (k-means)"]
     B --> C[Assign to nearest centroid]
     C --> D[Update centroid as mean]
     D --> E{Converged?}
-    E -- No --> C
-    E -- Yes --> F[Done]
+    E --|No|--> C
+    E --|Yes|--> F[Done]
 ```
+
 
 ---
 
@@ -236,6 +217,13 @@ print(f"Best K={best_k} with silhouette={best_score:.3f}")
 - Sensitive to **outliers** and **feature scaling**.
 - Prefers **spherical, equally-sized** clusters; struggles with non-convex shapes.
 - Local minima; initialization matters (use k-means++ and multiple starts).
+
+---
+## Youtube 📽️
+<p>
+    <a href="https://www.youtube.com/watch?v=4b5d3muPQmA">Stats Quest Video 😁</a>
+    
+</p>
 
 ---
 
